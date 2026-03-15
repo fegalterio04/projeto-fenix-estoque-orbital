@@ -1,6 +1,6 @@
 ﻿using ProjetoFênix.Models;
 
-namespace ProjetoFenix.Services
+namespace ProjetoFênix.Services
 {
     public interface IInventoryService
     {

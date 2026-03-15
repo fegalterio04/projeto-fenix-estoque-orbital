@@ -1,7 +1,7 @@
 ﻿using ProjetoFênix.Models;
 using System.Xml.Linq;
 
-namespace ProjetoFenix.Services
+namespace ProjetoFênix.Services
 {
     public class InventoryService : IInventoryService
     {
