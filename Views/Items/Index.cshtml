@@ -1,0 +1,42 @@
+﻿@model List<ProjetoFênix.Models.Item>
+
+<h1>🚀 Estoque Orbital</h1>
+
+<!-- Formulário para adicionar item -->
+<form asp-controller="Items" asp-action="Create" method="post">
+    <input name="Nome" placeholder="Nome" required />
+    <input name="Quantidade" type="number" placeholder="Quantidade" required />
+    <input name="Categoria" placeholder="Categoria" required />
+    <button type="submit">Adicionar</button>
+</form>
+
+<hr />
+
+<!-- Tabela de itens -->
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Categoria</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nome</td>
+                <td>@item.Quantidade</td>
+                <td>@item.Categoria</td>
+                <td>
+                    <form asp-controller="Items" asp-action="Delete" asp-route-id="@item.Id" method="post">
+                        <button type="submit">Deletar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
